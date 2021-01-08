@@ -22,9 +22,33 @@
 .navbar {
   background-color: #fff !important;
   padding: 0px;
+  z-index: 100;
+}
+
+.navbar-sticky {
+  /* position:absolute; */
+  background-color: #fff;
+  /* margin: 0; */
+  animation: moveDown 0.5s ease-in-out;
+  transition-delay: 1s;
+}
+
+.sticky-wrapper {
+  position: relative;
+  /* height: 3rem; */
+  padding: 0px;
+}
+
+.sticky .sticky-inner{
+  position:relative;
+  top: 0px;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
 .one-edge-shadow {
+  transition-delay: 1s;
   -webkit-box-shadow: 0 8px 6px -6px rgb(194, 194, 194);
      -moz-box-shadow: 0 8px 6px -6px rgb(194, 194, 194);
           box-shadow: 0 8px 6px -6px rgb(194, 194, 194);
@@ -39,7 +63,7 @@
 .navbar a{
   font-size: 1.2em;
   text-transform: capitalize;
-  font-weight: 900;
+  font-weight: 600;
   color: #33658A !important;
 }
 
@@ -58,14 +82,14 @@ ul li{
   color: #FFF;
   background-color: #fff;
   text-decoration: none;
-  border-bottom: transparent solid 3px;
+  border-bottom: transparent solid 4px;
   padding-bottom: 5px;
   transition: all 0.15s ease;
 }
 ul li:hover {
   color: #FFF;
   background-color: #fff;
-  border-bottom: #F6AE2D solid 4px;
+  border-bottom: #F6AE2D solid 5px;
   transition: 1s;
 }
 
@@ -106,3 +130,4 @@ ul li:hover {
 .login_btn1:hover {
   color: #4285F4;
 }
+

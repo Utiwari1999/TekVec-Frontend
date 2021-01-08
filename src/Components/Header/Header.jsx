@@ -1,39 +1,44 @@
-import React from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { HashLink } from "react-router-hash-link";
+import styled, { keyframes } from "styled-components";
 import './Header.css';
 
-const Home = () => {
+
+const Header = ({sticky}) => {
+
   return (
     <>
-    <div className='container-fluid nav-bg'>
-        <div className='row'>
+    {/* <div className={`sticky-top ${sticky ? 'sticky one-edge-shadow' : null}`}> */}
+    <div className='sticky-top sticky-inner container-fluid nav-bg'>
+        <div className={sticky ? 'one-edge-shadow navbar-sticky row' : 'row'}>
             <div className='col-12 mx-auto'>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-            <NavLink className="navbar-brand" to="#"><span className='main_heading1'>Tek</span><span className='main_heading'>Vek</span></NavLink>
+            <HashLink className="navbar-brand" to="#"><span className='main_heading1'>Tek</span><span className='main_heading'>Vec</span></HashLink>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li style={{borderBottom: '#F6AE2D solid 4px', paddingBottom: '5px'}}  className="nav-item">
-                <NavLink activeClassName='menu_active' className="nav-link active" aria-current="page" to="/">Home</NavLink>
+                <li style={{borderBottom: '#F6AE2D solid 5px', paddingBottom: '5px'}}  className="nav-item">
+                <HashLink activeClassName='menu_active' className="nav-link active" aria-current="page" smooth scroll={el => el.scrollIntoView({ behavior: 'instant', block: 'end' })} to="/#homepage">Home</HashLink>
                 </li>
                 <li className="nav-item">
-                <NavLink activeClassName='menu_active' className="nav-link" to="/howitworks">How It Works</NavLink>
+                <HashLink exact activeClassName='menu_active' className="nav-link" smooth scroll={el => el.scrollIntoView({ behavior: 'instant', block: 'end' })} to="/#howitworks">How It Works</HashLink>
                 </li>
                 <li className="nav-item">
-                <NavLink activeClassName='menu_active' className="nav-link" to="/courses">Courses Offered</NavLink>
+                <HashLink activeClassName='menu_active' className="nav-link" smooth to="/courses">Courses Offered</HashLink>
                 </li>
                 <li className="nav-item">
-                <NavLink activeClassName='menu_active' className="nav-link" to="plans">Our Plans</NavLink>
+                <HashLink activeClassName='menu_active' className="nav-link" smooth to="plans">Our Plans</HashLink>
                 </li>
                 <li className="nav-item">
-                <NavLink activeClassName='menu_active' className="nav-link" to="about">About Us</NavLink>
+                <HashLink activeClassName='menu_active' className="nav-link" smooth to="about">About Us</HashLink>
                 </li>
                 <div className='login_btn1'>
                 <div style={{margin: '12px 12px', color: 'white'}} className='mt-3'>
-                    <NavLink to='' className='btn-get-started1 login_btn'> <span id='login_btn'>login</span> </NavLink>
+                    <HashLink smooth to='' className='btn-get-started1 login_btn'> <span id='login_btn'>login</span> </HashLink>
                 </div>
                 </div>
             </ul>
@@ -43,8 +48,10 @@ const Home = () => {
         </div>
         </div>
     </div>
+    {/* </div> */}
     </>
   );
 }
 
-export default Home;
+export default Header;
+
