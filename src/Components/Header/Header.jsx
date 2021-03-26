@@ -31,7 +31,7 @@ const Header = ({sticky}) => {
                 <HashLink activeClassName='menu_active' className="nav-link" smooth scroll={el => el.scrollIntoView({ behavior: 'instant', block: 'start' })} to="/#coursesoffered">Courses Offered</HashLink>
                 </li>
                 <li className="nav-item">
-                <HashLink activeClassName='menu_active' className="nav-link" smooth to="plans">Our Plans</HashLink>
+                <HashLink activeClassName='menu_active' className="nav-link" smooth scroll={el => el.scrollIntoView({ behavior: 'instant', block: 'start' })} to="/#ourplans">Our Plans</HashLink>
                 </li>
                 <li className="nav-item">
                 <HashLink activeClassName='menu_active' className="nav-link" smooth to="about">About Us</HashLink>
